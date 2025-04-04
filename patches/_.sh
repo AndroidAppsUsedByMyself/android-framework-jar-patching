@@ -17,7 +17,13 @@ patch_insert_after() {
     local marker=$(patch_banner "$identity")
     local lib="$2"
     local regx="$3"
-    local code=$(printf '%s' "$4" | sed 's/[][\.*^$(){}?+|\/]/\\&/g')
+    local mode="$6"
+    # if set this to CODE_WITHOUT_ESCAPE, then code will be inserted without escaping, user should be careful with it
+    if [[ "$mode" == "CODE_WITHOUT_ESCAPE" ]]; then
+        local code=$(printf '%s' "$4")
+    else
+        local code=$(printf '%s' "$4" | sed 's/[][\.*^$(){}?+|\/]/\\&/g')
+    fi
     local class="$5"
 
     SCRIPT_PATH=$(dirname $(realpath "$0"))
