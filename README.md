@@ -20,7 +20,7 @@ Sometimes tools like Frida or XPosed/LSPosed got detected by app under research,
 4. Modify variables in `*.sh` files according to comments on top
 5. Run `./jar_to_smali.sh my.jar`, after run you will get `my.jar.smali` folder
 6. Modify SMALI files in `my.jar.smali` as you wish
-7. Run `smali_to_jar.sh my.jar` to build JAR from updated SMALI files (updated JAR will be located in `magisk_module/system/framework/my.jar`)
+7. Run `./smali_to_jar.sh my.jar` to build JAR from updated SMALI files (updated JAR will be located in `magisk_module/system/framework/my.jar`)
 8. Build Magisk module for replacing original JARs: `./build_magisk_module.sh`
 9. Push magisk module (`jarpatcher.zip`) to device via ADB, install magisk module and reboot device to apply changes: `adb push jarpatcher.zip /sdcard/ && adb shell su -c "magisk --install-module /sdcard/jarpatcher.zip" && adb reboot`
 	- if you modified JAR from APEX(`/apex/`), see `How to replace JAR in APEX?` section below
