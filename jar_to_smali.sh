@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SCRIPT_PATH=$(dirname "$(realpath $0)")
 # this is the name of JAR you adb-pulled from your device (it can be any jar from /system/framework or /apex/)

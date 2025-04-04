@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 patch_banner() {
     local identity=$1
